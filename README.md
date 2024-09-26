@@ -31,8 +31,10 @@
 6.	Compile the lex program with lex compiler to produce output file as lex.yy.c. eg $ lex filename.l $ cc lex.yy.c
 7.	Compile that file with C compiler and verify the output.
 # PROGRAM
+```
 Developed by: MOHANRAM GUNASEKAR
 Register no: 212223240095
+```
 ```
 #include <stdio.h>
 #include <ctype.h>
@@ -51,23 +53,17 @@ int isKeyword(char buffer[]) {
 int main() {
     char ch, buffer[15];
     char operators[] = "+-*/=";
-    int i = 0, j = 0;
+    int i = 0;
 
     printf("Enter your input: ");
     
-    // Input is read until the end (Ctrl+D in Linux/Mac or Ctrl+Z in Windows)
     while ((ch = getchar()) != EOF) {
-        // Recognize operators
         if (strchr(operators, ch)) {
             printf("Operator: %c\n", ch);
-        }
-        // Recognize identifiers or keywords
-        else if (isalnum(ch)) {
+        } else if (isalnum(ch)) {
             buffer[i++] = ch;
-        }
-        // Recognize whitespace or end of token (identifier/keyword)
-        else if ((ch == ' ' || ch == '\n' || ch == '\t') && i != 0) {
-            buffer[i] = '\0';  // End the token string
+        } else if ((ch == ' ' || ch == '\n' || ch == '\t') && i != 0) {
+            buffer[i] = '\0';
 
             if (isKeyword(buffer)) {
                 printf("Keyword: %s\n", buffer);
@@ -76,12 +72,13 @@ int main() {
             } else {
                 printf("Identifier: %s\n", buffer);
             }
-            i = 0;  // Reset buffer index
+            i = 0;
         }
     }
 
     return 0;
 }
+
 ```
 # OUTPUT
 
