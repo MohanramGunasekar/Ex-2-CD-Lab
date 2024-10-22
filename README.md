@@ -4,6 +4,7 @@
 # ALGORITHM
 
 1.	Start the program.
+
 2.	Lex program consists of three parts.
 
      a.	Declaration %%
@@ -26,15 +27,17 @@
     e.	Pn {action}
 
 5.	Write a program in the vi editor and save it with .l extension.
+
 6.	Compile the lex program with lex compiler to produce output file as lex.yy.c. eg $ lex filename.l $ cc lex.yy.c
 7.	Compile that file with C compiler and verify the output.
 
-# INPUT
-## exp2.l.txt
+# PROGRAM
+
 ```
-Developed by: MOHANRAM GUNASEKAR
-Register no: 212223240095
+NAME : MOHANRAM GUNASEKAR
+REG.NO : 212223240095
 ```
+exp2.l.txt
 ```
 /* program name is lexp.l */
 %{
@@ -79,8 +82,8 @@ int yywrap() {
 	return 0;
 }
 ```
-## var.c
-```c
+var.c
+```
 #include <stdio.h>
 int main(){
 	int a,b;
@@ -88,6 +91,9 @@ int main(){
 }
 ```
 # OUTPUT
-![alt text](output.png)
+
+![output](https://github.com/user-attachments/assets/f4368063-6205-41cb-989a-f044de50ebc6)
+
 # RESULT
 ## The lexical analyzer is implemented using lex and the output is verified.
+
